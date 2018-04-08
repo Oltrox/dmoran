@@ -76,50 +76,64 @@ h6 {
 <body>
 
 <style type="text/css">
-.main-container {
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
-}
-img {
-  max-width:100%;
-  height: auto;
-}
-.tabbed-pane {
-  padding-top: 12px;
-}
-button.code-folding-btn:focus {
-  outline: none;
-}
-.menuH{
-    box-sizing:border-box;
-    display:grid;                  /* Tenemos una red de menus*/
+    .main-container {
+      max-width: auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    code {
+      color: inherit;
+      background-color: rgba(0, 0, 0, 0.04);
+    }
+    img {
+      max-width:100%;
+      height: auto;
+    }
+    .tabbed-pane {
+      padding-top: 0px;
+    }
+    button.code-folding-btn:focus {
+      outline: none;
+    }
+    pre{
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: auto;
+        overflow-x: auto;
+        width: auto;
+    }
     
-    grid-template-columns: auto auto auto auto auto; /*elegir la cantidad de columnas*/
-    overflow: auto;
-}
+    .r code{
+        box-sizing: content-box;
+        width: 720px;
+    }
     
-.menuH a{
-    background-color: cornflowerblue;
-    color: white;
-    text-decoration:none;
-    
-    float:left;
-   
-    width: 100%; /*100% de la caja*/
-    padding:10px;
-    margin-bottom:10px;
-    
-    font-size:17px;
-    text-align: center;
-}
-.menuH a:hover{
-    background-color: darkblue;
-}
+    .menuH{
+        box-sizing:border-box;
+        display:grid;                  /* Tenemos una red de menus*/
+        grid-template-columns:auto; /*elegir la cantidad de columnas*/
+        overflow: auto;
+    }
+    .menuH a{
+        background-color: cornflowerblue;
+        color: white;
+        text-decoration:none;
+
+        float:left;
+
+        width: 100px; /*100% de la caja*/
+        padding:10px;
+
+        font-size:17px;
+        text-align: center;
+    }
+    .menuH a:hover{
+        background-color: darkblue;
+    }
+    .titulo{
+        margin-top: 8px;
+        margin-bottom: 5px;
+    }  
 </style>
 
 
@@ -147,9 +161,9 @@ $(document).ready(function () {
 
 <div>
     <nav class="menuH">
-        <b><a href="mediana.html">Mediana</a></b>
+        <b><a href="mediana.html">Tendencia Central</a></b>
         <b><a href="cuantiles.html">Cuantiles</a></b>
-        <b><a href="https://www.youtube.com/watch?v=WDzvJ71PqGY">Proximamente...</a></b>
+        <b><a href="dispersion.html">Dispersión</a></b>
         <b><a href="https://www.youtube.com/watch?v=8ZcmTl_1ER8">Proximamente...</a></b>
         <b><a href="https://www.youtube.com/watch?v=yMp8SD4PEW4">Proximamente...</a></b>
     </nav>
