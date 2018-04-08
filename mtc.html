@@ -75,25 +75,75 @@ h6 {
 <body>
 
 <style type="text/css">
-.main-container {
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
-}
-img {
-  max-width:100%;
-  height: auto;
-}
-.tabbed-pane {
-  padding-top: 12px;
-}
-button.code-folding-btn:focus {
-  outline: none;
-}
+    .main-container {
+      max-width: auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    code {
+      color: inherit;
+      background-color: rgba(0, 0, 0, 0.04);
+    }
+    img {
+      max-width:100%;
+      height: auto;
+    }
+    .tabbed-pane {
+      padding-top: 0px;
+    }
+    button.code-folding-btn:focus {
+      outline: none;
+    }
+    pre{
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: auto;
+        overflow-x: auto;
+        width: auto;
+    }
+    
+    .r code{
+        box-sizing: content-box;
+        width: 450px;
+    }
+    .rno{
+       box-sizing: border-box;
+        display: grid;
+        grid-template-columns: auto;
+        overflow-x: auto;
+        width: auto;
+    }
+    .rno code{
+        box-sizing: content-box;
+       width: 540px; 
+    }
+    
+    .menuH{
+        box-sizing:border-box;
+        display:grid;                  /* Tenemos una red de menus*/
+        grid-template-columns:auto; /*elegir la cantidad de columnas*/
+        overflow: auto;
+    }
+    .menuH a{
+        background-color: cornflowerblue;
+        color: white;
+        text-decoration:none;
+
+        float:left;
+
+        width: 100px; /*100% de la caja*/
+        padding:10px;
+
+        font-size:17px;
+        text-align: center;
+    }
+    .menuH a:hover{
+        background-color: darkblue;
+    }
+    .titulo{
+        margin-top: 8px;
+        margin-bottom: 5px;
+    }  
 </style>
 
 
@@ -123,7 +173,11 @@ $(document).ready(function () {
 
 </div>
 
-
+<div>
+    <nav class="menuH">
+        <b><a href="http://taiv.io/U">Regresar</a></b>
+    </nav>
+</div>  
 <div id="la-media-y-la-mediana" class="section level4">
 <h4><strong>La media y la mediana</strong></h4>
 <p>La media aritmetica es el promedio de los datos, es decir, la suma de los datos entre la cantidad.</p>
