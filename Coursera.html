@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+<meta name="author" content="Daniel Morán" />
+
+
+<title>Coursera - Programacion Estadistica con R</title>
+
+<script src="Coursera_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="Coursera_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="Coursera_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="Coursera_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="Coursera_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="Coursera_files/navigation-1.1/tabsets.js"></script>
+<link href="Coursera_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="Coursera_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Coursera - Programacion Estadistica con R</h1>
+<h4 class="author"><em>Daniel Morán</em></h4>
+
+</div>
+
+
+<div class="figure">
+<img src="Coursera_files/coursera.png" alt="Curso completado de Coursera" />
+<p class="caption">Curso completado de Coursera</p>
+</div>
+<div id="sesion-1---obtener-ayuda" class="section level4">
+<h4>Sesión 1 - Obtener Ayuda</h4>
+<pre class="r"><code>help.start()
+?print
+apropos(&quot;class&quot;)
+example(&quot;read.table&quot;)
+??regression
+vignette(&quot;tests&quot;)</code></pre>
+</div>
+<div id="sesion-2---objetos-tipos-de-datos-y-operaciones-basicas" class="section level4">
+<h4>Sesión 2 - Objetos Tipos de Datos y Operaciones Basicas</h4>
+<pre class="r"><code>3+7
+mi_variable &lt;- (180 / 6) -15
+mi_variable
+y &lt;- c(561,1105,1729,2465,2821)
+print(y)
+1:100
+c(1.1,2.2,3.3,4.4)- c(1,1,1,1)
+c(1,2,3,4,5,6,7,8,9,10)- c(1,2)
+ls()
+&quot;¡Hola Mundo!&quot;
+colores &lt;- c(&quot;rojo&quot;,&quot;azul&quot;,&quot;verde&quot;,&quot;azul&quot;,&quot;rojo&quot;)
+colores
+complejo &lt;- 2+1i
+mi_variable == 15
+length(complejo) &lt;- 3
+complejo
+2^1024
+0/0
+fecha_primer_curspo_R &lt;- Sys.Date()
+fecha_primer_curso_R &lt;- Sys.Date()
+fecha_primer_curso_R
+vector(&quot;numeric&quot;,length = 10)
+vector(&quot;character&quot;,length = 10)
+vector(&quot;logical&quot;,length = 10)
+list(0,&quot;Hola&quot;,TRUE)
+c(T, 19, 1+3i)
+c &lt;- vector(&quot;numeric&quot;,length = 5)
+c
+as.logical(c)
+class(c)
+as.logical(c)
+class(as.logical(c))
+m &lt;- matrix(data = 1:12,nrow=4,ncol=3)
+m
+factor(colores)
+data.frame(llave =y, color=colores)
+mi_variable &lt;- (180 / 60) -15
+mi_variable</code></pre>
+</div>
+<div id="sesion-3---subconjuntos-de-datos" class="section level4">
+<h4>Sesión 3 - Subconjuntos de Datos</h4>
+<pre class="r"><code>mi_vector 11:30
+mi_vector &lt;- 11:30
+mi_variable
+mi_vector
+mivector[2]
+mi_vector[3]
+mi_vector[1:5]
+mi_vector[c(4,6,13)]
+mi_vector[c(6,13,4)]
+mi_vector[[3]]
+mi_vector[-9:-15
+mi_vector[-9:-15]
+9:15
+mi_vector[-9:-15]
+mi_vector[rep(c(TRUE,FALSE),10)]
+mi_vector[c(FALSE,FALSE,TRUE)]
+mi_vector &gt; 20
+mi_vector[(mi_vector &gt; 20)]
+mi_arreglo &lt;- array(c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18),dim=c(3,3,2))
+mi_arreglo
+mi_Arreglo[1,3,2]
+mi_arreglo[1,3,2]
+mi_arreglo[1:2,1:2,1]
+mi_matriz &lt;- array(1:9,dim=c(3x3x1))
+mi_matriz &lt;- array(c(1:9),dim=c(3x3x1))
+mi_matriz &lt;- array(c(1:9),dim=c(3x3x1))
+mi_matriz &lt;- array(c(1:9),dim=c(3x3x2))
+mi_matriz &lt;- array()
+mi_matriz &lt;- array(c(1:9),dim=c(3x3x2))
+mi_matriz &lt;- array(c(1,2,3,4,5,6,7,8,9),dim=c(3x3x2))
+mi_matriz &lt;- array(c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18),dim=c(3,3,2))
+mi_matriz &lt;- array(c(1,2,3,4,5,6,7,8,9),dim=c(3,3,1))
+mi_matriz
+mi_matriz &lt;- matrix(data=1:9,nrow=3,ncol=3)
+mi_matriz[1,]
+mi_matriz[,1]
+mi_matriz[2:3,]
+mi_matriz[c(1,3),]
+carro &lt;- list(color=&quot;rojo&quot;, nllantas=4, marca= &quot;Renault&quot;,ncilindros=4)
+carro &lt;- list(color=&quot;rojo&quot;, nllantas=4, marca= &quot;Renault&quot;,| ncilindros=4)
+carro &lt;- list(color=&quot;rojo&quot;, nllantas=4, marca= &quot;Renault&quot;, ncilindros=4)
+carro
+carro$color
+carro[c(&quot;ncilindros&quot;,&quot;nllantas&quot;)]
+carro[[&quot;marca&quot;]]
+carro[[&quot;mar&quot;,exact=FALSE]]
+camioneta &lt;- list(color=&quot;azul&quot;, nllantas=4, marca= &quot;BMW&quot;, ncilindros=6)
+cochera &lt;- list(carro, camioneta)
+cochera
+cochera[[c(2,1)]]
+cars
+cars$speed
+cars$dist&gt;100
+cars$speed[cars$dist&gt;100]</code></pre>
+</div>
+<div id="sesion-4---leer-y-escribir-datos" class="section level4">
+<h4>Sesión 4 - Leer y escribir Datos</h4>
+<pre class="r"><code>mi_vector 11:30
+mi_vector &lt;- 11:30
+mi_variable
+mi_vector
+mivector[2]
+mi_vector[3]
+mi_vector[1:5]
+mi_vector[c(4,6,13)]
+mi_vector[c(6,13,4)]
+mi_vector[[3]]
+mi_vector[-9:-15
+mi_vector[-9:-15]
+9:15
+mi_vector[-9:-15]
+mi_vector[rep(c(TRUE,FALSE),10)]
+mi_vector[c(FALSE,FALSE,TRUE)]
+mi_vector &gt; 20
+mi_vector[(mi_vector &gt; 20)]
+mi_arreglo &lt;- array(c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18),dim=c(3,3,2))
+mi_arreglo
+mi_Arreglo[1,3,2]
+mi_arreglo[1,3,2]
+mi_arreglo[1:2,1:2,1]
+mi_matriz &lt;- array(1:9,dim=c(3x3x1))
+mi_matriz &lt;- array(c(1:9),dim=c(3x3x1))
+mi_matriz &lt;- array(c(1:9),dim=c(3x3x1))
+mi_matriz &lt;- array(c(1:9),dim=c(3x3x2))
+mi_matriz &lt;- array()
+mi_matriz &lt;- array(c(1:9),dim=c(3x3x2))
+mi_matriz &lt;- array(c(1,2,3,4,5,6,7,8,9),dim=c(3x3x2))
+mi_matriz &lt;- array(c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18),dim=c(3,3,2))
+mi_matriz &lt;- array(c(1,2,3,4,5,6,7,8,9),dim=c(3,3,1))
+mi_matriz
+mi_matriz &lt;- matrix(data=1:9,nrow=3,ncol=3)
+mi_matriz[1,]
+mi_matriz[,1]
+mi_matriz[2:3,]
+mi_matriz[c(1,3),]
+carro &lt;- list(color=&quot;rojo&quot;, nllantas=4, marca= &quot;Renault&quot;,ncilindros=4)
+carro &lt;- list(color=&quot;rojo&quot;, nllantas=4, marca= &quot;Renault&quot;,| ncilindros=4)
+carro &lt;- list(color=&quot;rojo&quot;, nllantas=4, marca= &quot;Renault&quot;, ncilindros=4)
+carro
+carro$color
+carro[c(&quot;ncilindros&quot;,&quot;nllantas&quot;)]
+carro[[&quot;marca&quot;]]
+carro[[&quot;mar&quot;,exact=FALSE]]
+camioneta &lt;- list(color=&quot;azul&quot;, nllantas=4, marca= &quot;BMW&quot;, ncilindros=6)
+cochera &lt;- list(carro, camioneta)
+cochera
+cochera[[c(2,1)]]
+cars
+cars$speed
+cars$dist&gt;100
+cars$speed[cars$dist&gt;100]</code></pre>
+</div>
+<div id="sesion-5---funciones" class="section level4">
+<h4>Sesión 5 - Funciones</h4>
+<pre class="r"><code>c(1,03,2016)
+sucesor &lt;- function(x) x+1
+submit()
+submit()
+sucesor(5)
+sucesor
+submit()
+submit()
+submit()
+diferencia_cuadrada(3)
+diferencia_cuadrada(10,5)
+diferencia_cuadrada(y=10,x5)
+diferencia_cuadrada(y=10,x=5)
+submit()
+numeros_por_vocales(&quot;dsfusdf&quot;,&quot;fjsdhf&quot;)
+numeros_por_vocales(&quot;dsfusdf&quot;)
+numeros_por_vocales(&quot;dsfusdf&quot;)
+numeros_por_vocales(&quot;dsfusdf&quot;)
+numeros_por_vocales(asdsa )
+numeros_por_vocales(asdsa )
+numeros_por_vocales(asdsa )
+numeros_por_vocales(asdsa )
+source(&#39;C:/Users/Daniel/AppData/Local/Temp/RtmpyWXRWe/numeros_por_vocales.R&#39;, encoding = &#39;UTF-8&#39;)
+source(&#39;C:/Users/Daniel/AppData/Local/Temp/RtmpyWXRWe/numeros_por_vocales.R&#39;, encoding = &#39;UTF-8&#39;)
+numeros_por_vocales(asdsa )
+numeros_por_vocales(&quot;asdsa&quot;)
+source(&#39;C:/Users/Daniel/AppData/Local/Temp/RtmpyWXRWe/numeros_por_vocales.R&#39;, encoding = &#39;UTF-8&#39;)
+numeros_por_vocales(&quot;asdsa&quot;)
+submit()
+submit()
+submit()
+source(&#39;C:/Users/Daniel/AppData/Local/Temp/RtmpyWXRWe/numeros_por_vocales.R&#39;, encoding = &#39;UTF-8&#39;)
+source(&#39;C:/Users/Daniel/AppData/Local/Temp/RtmpyWXRWe/numeros_por_vocales.R&#39;, encoding = &#39;UTF-8&#39;)
+submit()
+submit()
+numeros_por_vocales(&quot;sdjfhasjdfkhasdf  sdfkj adsh fqpeo m2qodskdmc asdf rgf&quot;)
+args(mean)
+formals(mean)
+submit()
+operador_binario(`%/%`,7,3)</code></pre>
+</div>
+<div id="sesion-6---funciones-apply" class="section level4">
+<h4>Sesión 6 - Funciones apply</h4>
+<pre class="r"><code>help(&quot;apply&quot;)
+mi_matriz &lt;- matrix(c(1:16),nrow=4,ncol=4)
+mi_matriz
+mi_matriz &lt;- (data=1:16,ncol=4,ncol=4)
+mi_matriz &lt;- matrix(data=1:16,ncol=4,ncol=4)
+mi_matriz &lt;- matrix(data=1:16,nrow=4,ncol=4)
+mi_matriz
+apply(X=mi_matriz,MARGIN=2,FUN=min)
+apply(X=mi_matriz,MARGIN=1,FUN=min)
+mi_lista &lt;- list(&quot;Introducción&quot;, &quot;a&quot;, &quot;la&quot;, &quot;Programación&quot;, &quot;Estadística&quot;, &quot;con&quot;, &quot;R&quot;)
+mi_lista
+lapply()
+?lapply()
+help(lapply())
+args(lapply
+help(lapply())
+args(lapply)
+mayusculas &lt;- lapply(X = mi_lista, toupper)
+mayusculas
+class(mayusculas)
+datos &lt;- read.table(&quot;swirl_temp/ASA_estadisticasPasajeros(3).csv&quot;,header=T,sep=&quot;,&quot;,fileEncoding=&quot;latin1&quot;)
+read.csv(&quot;swirl_temp/ASA_estadisticasPasajeros(3).csv&quot;,header=T,sep = &quot;,&quot;)
+datos &lt;- read.csv(&quot;swirl_temp/ASA_estadisticasPasajeros(3).csv&quot;,header=T,sep = &quot;,&quot;)
+info()
+asa_datos &lt;- read.csv(&quot;swirl_temp/ASA_estadisticasPasajeros(3).csv&quot;,header=T,sep = &quot;,&quot;)
+asa_datos &lt;- read.*(&quot;swirl_temp/ASA_estadisticasPasajeros(3).csv&quot;,header=T,sep = &quot;,&quot;)
+asa_datos &lt;- read.*(&quot;swirl_temp/ASA_estadisticasPasajeros(3).csv&quot;)
+asa_datos &lt;- read.csv(&quot;swirl_temp/ASA_estadisticasPasajeros(3).csv&quot;)
+asa_datos
+view(asa_datos)
+View(asa_datos)
+lapply(asa_datos,class)
+asa_datos$Des
+asa_datos$Descripcion
+unique(asa_datos$Descripcion)
+unique(asa_datos$Estado)
+sum(asa_datos$Pasajeros.nacionales)
+asa_pasajeros &lt;- asa_Datos[,c(&quot;Pasajeros.nacionales&quot;,&quot;Pasajeros,internacionales&quot;)]
+asa_pasajeros &lt;- asa_datos[,c(&quot;Pasajeros.nacionales&quot;,&quot;Pasajeros,internacionales&quot;)]
+asa_pasajeros &lt;- asa_datos[,c(&quot;Pasajeros.nacionales&quot;,&quot;Pasajeros.internacionales&quot;)]
+View(asa_pasajeros)
+lapply(X=asa_pasajeros,sum)
+total_pasajeros &lt;- sapply(asa_pasajeros,sum)
+total_pasajeros
+table(asa_datos$Estado)
+tapply(asa_datos$Pasajeros.nacionales,asa_datos$Estado, sum)
+tapply(asa_datos$Pasajeros.nacionales,asa_datos$Estado, mean)
+tapply(asa_datos$Pasajeros.nacionales,asa_datos$Codigo.IATA,mean)</code></pre>
+</div>
+<div id="sesion-7---graficacion" class="section level4">
+<h4>Sesión 7 - Graficacion</h4>
+<pre class="r"><code>demo(graphics)
+plot(1:5)
+plot(c(1,2,3),c(4,5,6))
+?plot
+plot(c(1,2,3),c(4,5,6),type=&quot;l&quot;)
+plot(6:10,type=&quot;e&quot;)
+plot(6:10,type=&quot;s&quot;)
+plot(1:10,type=&quot;o&quot;)
+plot(1:10,type=&quot;b&quot;)
+plot(1:5,main=&quot;Mi gráfica&quot;)
+plot(1:5,main=&quot;Mi gráfica&quot;,xlab=&quot;x&quot;,ylab=&quot;y&quot;)
+points(c(1,5),c(4,2),col=&quot;green&quot;)
+lines(c(1, 4), c(2, 5), col=&quot;yellow&quot;)
+abline(h=3,col=&quot;red&quot;,lty=2)
+abline(h=1:5,v=1:5,col=&quot;purple&quot;)
+data(&quot;iris&quot;)
+class(iris)
+head(iris)
+plot(iris)
+plot(iris$Petal.Length,iris$Petal.Width)
+hist(iris$Petal.Length,col=&quot;red&quot;)
+hist(iris$Petal.Length,col=&quot;red&quot;,freq=F)
+hist(iris$Petal.Length,col=&quot;red&quot;,freq=FALSE)
+hist(iris$Petal.Length,col=&quot;red&quot;,breaks=5)
+?boxplot
+boxplot(Sepal.Width ~ Species, data=iris, col=2:$)
+boxplot(Sepal.Width ~ Species, data=iris, col=2:4)
+pie(c(50,50,50),labels=levels(iris%Species))
+pie(c(50,50,50),labels=levels(iris$Species))</code></pre>
+</div>
+<div id="sesion-8---parametros-en-el-sistema-de-graficos" class="section level4">
+<h4>Sesión 8 - Parametros en el Sistema de Graficos</h4>
+<pre class="r"><code>?par
+par()
+par_prg &lt;- ár()
+par_prg &lt;- pa()
+par_prg &lt;- par()
+par_orig &lt;- par()
+par(&quot;col&quot;)
+par(col=&quot;blue&quot;)
+data(iris)
+plot(iris)
+par(&quot;col&quot;)
+plot(iris,col=iris$Species)
+iris
+colnames(iris)
+info
+iris[1]
+iris[[1]]
+names(iris)
+plot(iris$Sepal.Length,iris$Petal.Length, col = iris$Species)
+ok()
+plot(iris$Sepal.Length,iris$Petal.Length, col = iris$Species)
+par(pch=15)
+plot(iris$Sepal.Length,iris$Petal.Length, col = iris$Species)
+plot(iris$Sepal.Length,iris$Petal.Length, col = iris$Species, pch=&quot;A&quot;)
+plot(iris$Sepal.Length,iris$Petal.Length, col = iris$Species)
+plot(1:26,pch=0:25)
+plot(iris$Sepal.Length,iris$Petal.Length, col = iris$Species, pch = 21, bg = &quot;blue&quot;)
+plot(iris$Sepal.Length,iris$Petal.Length, col = iris$Species, cex = 2)
+legend(x = 4.5, y = 7, legend = levels(iris$Species), col = c(1:3), pch = 16)
+par()
+par(par_orig)</code></pre>
+</div>
+<div id="sesion-9---colores-en-el-sistema-de-graficos" class="section level4">
+<h4>Sesión 9 - Colores en el Sistema de Graficos</h4>
+<pre class="r"><code>colors()
+help(grep)
+grep(&quot;yewllow&quot;,colors(),value=FALSE)
+grep(&quot;yellow&quot;,colors(),value=FALSE)
+grep(&quot;yellow&quot;,colors(),value=TRUE)
+length(colors())
+palette()
+plot(1:8, col=1:8, main=&quot;Colores por indice&quot;,pch=17, cex=3)
+plot(1:8, col=1:8, main=&quot;Colores por índice&quot;,pch=17, cex=3)
+plot(1:12, col=1:12, main=&quot;Colores reciclados&quot;, pch=18, cex = 3)
+paleta_arcoiris &lt;- rainbow(10)
+paleta_arcoiris
+palette(paleta_arcoiris)
+palette()
+plot(1:10, col=1:10,main=&quot;Paleta Arcoiris&quot;,pch=17,cex=3)
+paleta_calida &lt;- heat.colors(10)
+palette(paleta_calida)
+plot(1:10,col=1:10,main=&quot;Paleta Cálida&quot;,pch=17,cex=3)
+mipaleta &lt;- c(&quot;red&quot;,&quot;geren&quot;,&quot;#0019FFFF&quot;)
+mi_paleta &lt;- c(&quot;red&quot;,&quot;geren&quot;,&quot;#0019FFFF&quot;)
+mi_paleta &lt;- c(&quot;red&quot;, &quot;geren&quot;, &quot;#0019FFFF&quot;)
+mi_paleta &lt;- c(&quot;red&quot;, &quot;geren&quot;, &quot;#0019FFFF&quot;)
+mi_paleta &lt;- c(&quot;red&quot;, &quot;green&quot;, &quot;#0019FFFF&quot;)
+plot(1:10,col=mi_paleta,main=&quot;Mi Paleta&quot;,pch=17,cex=3)
+palette(mi_paleta)
+plot(1:10, col=1:10, main=&quot;Mi Paleta&quot;,pch=17, cex=3)
+palette(&quot;default&quot;)</code></pre>
+</div>
+<div id="sesion-10---graficacion-con-texto-y-notacion-matematica" class="section level4">
+<h4>Sesión 10 - Graficacion con texto y notacion matematica</h4>
+<pre class="r"><code>plot(1:20, type=&quot;n&quot;)
+text(5,5,&quot;¡Hola Mundo!&quot;)
+?text
+text(11, 11, &quot;¡Hola Mundo! x2&quot;, cex=2)
+text(7, 7, &quot;¡Hola Mundo con Serif!&quot;, family=&quot;serif&quot;)
+text(9, 9, &quot;¡Hola Mundo con Mono!&quot;,family=&quot;mono&quot;)
+text(13, 13, &quot;¡Hola Mundo con Sans!&quot;, family=&quot;sans&quot;)
+demo(plotmath)
+plot(1:10, type=&quot;n&quot;, main=expression(alpha + beta))
+plot(1:10, type=&quot;n&quot;, xlab =expression(paste(&quot;Valores de &quot;, x^phi1)))
+?plotmath
+t &lt;- 10
+plot(1:t, main=substitute(paste(&quot;La gráfica del vector 1:&quot;, x),list(x=t)))
+t &lt;- 20
+plot(1:t, main=substitute(paste(&quot;La gráfica del vector 1:&quot;, x), list(x=t)))
+substitute()
+?substitute
+?substitute
+ok()
+swirl()
+?substitute</code></pre>
+</div>
+<div id="sesion-11---creacion-de-graficas-en-3d" class="section level4">
+<h4>Sesión 11 - Creacion de Graficas en 3D</h4>
+<pre class="r"><code>data(iris)
+head(iris)
+x &lt;- iris$Sepal.Length
+y &lt;- iris$Petal.Length
+z &lt;- iris$Sepal.Width
+?rgl
+open3d()
+plotd3d(iris$Sepal.Length, iris$Petal.Length, iris$Sepal.Width)
+plotd3d
+library(rgl)
+plotd3d
+plot3d()
+plot3d(iris$Sepal.Length, iris$Petal.Length, iris$Sepal.Width)
+plot3d(iris$Sepal.Length, iris$Petal.Length, iris$Sepal.Width, type= &quot;s&quot;)
+plot3d(iris$Sepal.Length, iris$Petal.Length, iris$Sepal.Width, type= &quot;s&quot;, col=rainbow(150))
+plot3d(iris$Sepal.Length, iris$Petal.Length, iris$Sepal.Width, type=&quot;s&quot;,col=as.integer(iris$Species))
+plot3d(iris$Sepal.Length, iris$Petal.Length, iris$Sepal.Width, type=&quot;s&quot;, col=as.integer(iris$Species), radius=1.5)
+plot3d(iris$Sepal.Length, iris$Petal.Length, iris$Sepal.Width, type=&quot;l&quot;, col=as.integer(iris$Species), xlab=&quot;Sepal.Length&quot;, ylab = &quot;Petal.Length&quot;, zlab = &quot;Sepal.Width&quot;)
+?plot3d</code></pre>
+</div>
+<div id="sesion-12---expresiones-regulares" class="section level4">
+<h4>Sesión 12 - Expresiones regulares</h4>
+<pre class="r"><code>texto &lt;- &quot;¡Hola Mundo!&quot;
+texto[1]
+texto[2]
+?substring
+substr(texto, 2:)
+substr(texto, c(2:)
+substr(texto, c(2:))
+substr(texto, c(2:7))
+substr(texto, 2,7)
+substr(texto, 7,11)
+substring(texto, 7,11)
+substring(texto, 7,11) &lt;- &quot;Swirl&quot;
+texto
+nchar(texto)
+paste(&quot;¡Adiós&quot;,&quot;Mundo!&quot;)
+paste(&quot;¡Adiós&quot;,&quot;Mundo!&quot;,sep=&quot;_&quot;)
+i &lt;- 9
+sprintf(&quot;El cuadrado de %d es %d&quot;,i,i^2)
+?sptrinf
+?sprintf
+strsplit(&quot;Me/gusta/programar/en/R&quot;,&quot;/&quot;)
+chartr(&quot;o&quot;,&quot;a&quot;,&quot;¡Hola Mundo!&quot;)
+patron &lt;- H(a|ä|ae)ndel
+patron &lt;- &quot;H(a|ä|ae)ndel&quot;
+musicos
+grep(patron,musicos)
+nuevo_patron &lt;- &quot;.(a|ä|ae|e)ndel&quot;
+grep(nuevo_patron,musicos)
+musicos[grep(nuevo_patron,musicos)]
+regexpr(patron,musicos)
+gregexpr(patron, &quot;Georg Friedrich Händel, en inglés George Frideric Handel fue un compositor alemán.&quot;)
+\regexpr
+?regexpr</code></pre>
+</div>
+<div id="sesion-13---graficacion-con-ggplot2" class="section level4">
+<h4>Sesión 13 - Graficacion con ggplot2</h4>
+<pre class="r"><code>data(diamonds)
+View(diamonds)
+?qplot
+qplot(color, data=diamonds)
+qplot(carat, price, data=diamonds)
+qplot(log(carat), log(price), data=diamonds)
+qplot(carat, x*y*z, data=diamonds)
+qplot(carat, price, data=diamonds, color=color)
+qplot(carat, price, data=diamonds, shape=cut)
+qplot(carat, price, data=diamonds, alpha=I(1/10))
+qplot(carat, price, data=diamonds, alpha=I(1/100))
+qplot(carat, price, data=diamonds, size=table)
+qplot(carat, price, data=diamonds, facets = color ~ .)
+qplot(carat, price, data=diamonds, geom = c(&quot;point&quot;, &quot;smooth&quot;))
+qplot(color, price/carat, data=diamonds, geom = &quot;jitter&quot;)
+qplot(color, price/carat, data=diamonds, geom = &quot;boxplot&quot;)</code></pre>
+</div>
+<div id="sesion-14---simulacion" class="section level4">
+<h4>Sesión 14 - Simulación</h4>
+<pre class="r"><code>?Normal
+help(Distributions)
+\rbinom
+?rbinom
+rbinom(1, 7, 0.5)
+resultado &lt;- rbinom(1, 100000, 0.5)
+resultado &lt;- rbinom(100000, 7, 0.5)
+tail(resultado)
+tail(resultado &gt; 5)
+mean(resultado &gt; 5)
+resultado &lt;- rbinom(100000, 1000, 0.5)
+resultado
+tail(resultado)
+?set.seed</code></pre>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
