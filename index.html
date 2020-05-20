@@ -583,6 +583,25 @@ $(document).ready(function () {
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>
+  
+  <script>
+      function change_favicon(img) {
+        var favicon = document.querySelector('link[rel="shortcut icon"]');
+
+        if (!favicon) {
+            favicon = document.createElement('link');
+            favicon.setAttribute('rel', 'shortcut icon');
+            var head = document.querySelector('head');
+            head.appendChild(favicon);
+        }
+
+
+        favicon.setAttribute('type', 'image/png');
+        favicon.setAttribute('href', img);
+    }
+    
+    change_favicon('https://w7.pngwing.com/pngs/389/740/png-transparent-computer-icons-scalable-graphics-favicon-world-wide-web-save-save-miscellaneous-angle-text.png');
+  </script>
 
 </body>
 </html>
